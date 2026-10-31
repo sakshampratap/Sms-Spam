@@ -1,0 +1,292 @@
+/* ==========================================================================
+   SMS GUARD — Modern Cybersecurity & AI Dashboard Theme
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+/* Global Root Configuration */
+:root {
+    --primary: #14213D;
+    --secondary: #2563EB;
+    --accent: #14B8A6;
+    --spam-danger: #EF4444;
+    --ham-safe: #16A34A;
+    --bg-page: #F4F7FB;
+    --bg-card: #FFFFFF;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --border-subtle: #E2E8F0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Base Body & Layout Defaults */
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+}
+
+/* Sidebar Custom Styling */
+[data-testid="stSidebar"] {
+    background-color: #0F172A !important;
+    border-right: 1px solid #1E293B;
+}
+
+[data-testid="stSidebar"] * {
+    color: #F8FAFC !important;
+}
+
+[data-testid="stSidebar"] .stSelectbox label,
+[data-testid="stSidebar"] .stRadio label {
+    color: #94A3B8 !important;
+}
+
+/* Headings with Poppins */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Header Banner Container */
+.guard-header-card {
+    background: linear-gradient(135deg, #14213D 0%, #1E3A8A 60%, #0F766E 100%);
+    padding: 2.2rem 2.4rem;
+    border-radius: 16px;
+    color: #FFFFFF !important;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guard-header-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #FFFFFF !important;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.guard-header-subtitle {
+    font-size: 1.05rem;
+    color: #93C5FD !important;
+    margin-top: 0.4rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.guard-header-desc {
+    font-size: 0.95rem;
+    color: #E2E8F0 !important;
+    margin-top: 0.8rem;
+    max-width: 850px;
+    line-height: 1.6;
+}
+
+/* Dashboard Metric Cards */
+.metric-card {
+    background-color: var(--bg-card);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-subtle);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    height: 100%;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.metric-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.metric-value {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.metric-footer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Classification Result Banners */
+.result-card-spam {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
+    border: 2px solid var(--spam-danger);
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.2);
+    margin: 1.5rem 0;
+}
+
+.result-badge-spam {
+    display: inline-block;
+    background-color: var(--spam-danger);
+    color: #FFFFFF !important;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.result-title-spam {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #991B1B !important;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.result-desc-spam {
+    font-size: 1rem;
+    color: #7F1D1D !important;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+.result-card-ham {
+    background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+    border: 2px solid var(--ham-safe);
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.2);
+    margin: 1.5rem 0;
+}
+
+.result-badge-ham {
+    display: inline-block;
+    background-color: var(--ham-safe);
+    color: #FFFFFF !important;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.result-title-ham {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #166534 !important;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.result-desc-ham {
+    font-size: 1rem;
+    color: #14532D !important;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Feature Explanatory Cards */
+.info-card {
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.2rem;
+}
+
+.info-card h4 {
+    margin-top: 0;
+    color: var(--primary);
+    font-size: 1.15rem;
+}
+
+.info-card p, .info-card li {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* Pill Badges */
+.pill-badge {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.pill-spam {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FCA5A5;
+}
+
+.pill-ham {
+    background-color: #DCFCE7;
+    color: #166534;
+    border: 1px solid #86EFAC;
+}
+
+/* Streamlit Native Overrides */
+.stButton>button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.55rem 1.4rem;
+    transition: all 0.15s ease-in-out;
+}
+
+.stButton>button[kind="primary"] {
+    background-color: var(--secondary) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.stButton>button[kind="primary"]:hover {
+    background-color: #1D4ED8 !important;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
+}
+
+.stTextArea textarea {
+    font-family: 'Inter', sans-serif;
+    border-radius: 12px;
+    border: 1.5px solid #CBD5E1;
+    font-size: 1rem;
+    padding: 0.9rem;
+    color: var(--text-main);
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Privacy & Footer Notice */
+.privacy-notice {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 0.8rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
